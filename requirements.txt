@@ -1,0 +1,8 @@
+faiss-cpu
+pickle
+gigachat
+sentence-transformers
+langchain_community==0.4.1
+langchain_core==1.2.16
+langchain_text_splitters==1.1.1
+Requests==2.32.5
