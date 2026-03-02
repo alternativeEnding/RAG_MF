@@ -179,15 +179,19 @@ def answer_question(question_text, kind):
 
     if chunk_id is not None:
         chosen_doc = docs[chunk_id]
+        filename = os.path.basename(chosen_doc.metadata.get("source", "unknown"))
+        pdf_sha1 = os.path.splitext(filename)[0]
         references.append({
-            "pdf_sha1": os.path.basename(chosen_doc.metadata.get("source", "unknown")),
+            "pdf_sha1": pdf_sha1,
             "page_index": chosen_doc.metadata.get("page", -1)
         })
 
     return {
-        "question": question_text,
+        "question_text": question_text,
+        "kind": kind,
         "value": value,
-        "references": references
+        "references": references,
+        "reasoning_process": " "
     }
 # Промпт
 
@@ -259,7 +263,7 @@ if __name__ == "__main__":
             answers.append(ans)
 
         result = {
-            "email": EMAIL,
+            "team_email": EMAIL,
             "submission_name": NAME,
             "answers": answers
         }
