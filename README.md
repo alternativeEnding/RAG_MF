@@ -62,5 +62,6 @@ pip install -r requirements.txt
 Векторное хранилище FAISS ```data/faiss_index/```
 
 ### 6. Последовательность запуска (полный пайплайн)
-- vector_store.py        # построение FAISS-индекс
-- main.py                # запуск RAG-системы и формирование submission
+• vector_store.py        # построение FAISS-индекс
+
+• main.py                # запуск RAG-системы и формирование submission
